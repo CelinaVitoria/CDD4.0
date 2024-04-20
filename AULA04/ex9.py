@@ -7,4 +7,5 @@ while senha != ss:
     if x == 2 and ss != senha:
         print("senha bloqueada")
         break
-print("correto!")
+else:
+    print("login realizado")
