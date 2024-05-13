@@ -27,7 +27,6 @@ def vogais(texto):
             cont2 = cont2 + 1
     print(cont1)
     print(cont2)
-texto = "o rato roeu a roupa do rei de roma"
 def estoque(nome, quant, valor):
     total = quant * valor
     return total
