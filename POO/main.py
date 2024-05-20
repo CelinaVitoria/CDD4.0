@@ -13,3 +13,8 @@ p1.ativar("ativar")
 p1.depositar(1800)
 p1.sacar(1000)
 p1.verificar()
+
+from classes import *
+t = Triangulo
+t.calculaArea()
+t.calculaPerimetro()
