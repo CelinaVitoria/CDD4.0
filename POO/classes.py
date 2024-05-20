@@ -67,3 +67,38 @@ class Pessoa():
             print(f"{self.nome} está falando")
         elif self.comendo == True:
             print(f"{self.nome} está comendo")
+class conta():
+    def __init__(self, nmrconta, nomecliente, tipoconta,):
+        self.nmr = nmrconta
+        self.sld = valor = 0
+        self.stts = False
+        self.nm = nomecliente
+        self.tpconta = tipoconta
+    def ativar(self,status = False):
+        if status == "ativar":
+            self.stts = True
+            print("a conta está ativada")
+    def desativar(self,status = False):
+        if status == "deativar":
+            self.stts = False
+            print("a conta está ativada")
+    def depositar(self,valor):
+        self.sld += valor
+        if self.stts == False:
+            print("A conta está desativada, ative")
+        else:
+            print(f"{self.nm} inseriu R${valor} na conta")
+    def sacar(self, valor):
+        if self.stts == False:
+            print("A conta está desativada, ative")
+        else:
+            if valor < self.sld:
+                print(f"{self.nm} sacou R${valor}")
+                self.sld -= valor
+            else:
+                print("você não possue esse valor para sacar")
+    def verificar(self):
+        if self.stts == False:
+            print("A conta está desativada, ative")
+        else:
+            print(f"o saldo presente na conta é de R${self.sld}")
