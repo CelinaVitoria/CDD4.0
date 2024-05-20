@@ -102,3 +102,24 @@ class conta():
             print("A conta está desativada, ative")
         else:
             print(f"o saldo presente na conta é de R${self.sld}")
+class Forma():
+    def __init__(self):
+        self.area = 0
+        self.perimetro = 0
+class Retangulo(Forma):
+    def __init__(self):
+        super().__init__()
+    def calculaArea( b, h):
+        self.area = b * h
+    def calculaPerimetro( b, h):
+        self.perimetro = 2(b * h)
+        print(f"A are do retangulo é {self.area} e o perimetro do retangulo é {self.perimetro}")
+class Triangulo(Forma):
+    def __init__(self):
+        super().__init__()
+    def calculaArea( b, h):
+        self.area = (b * h) / 2
+    def calculaPerimetro(l):
+        self.perimetro = 3 * l
+        print(f"A are do retangulo é {self.area} e o perimetro do retangulo é {self.perimetro}")
+
