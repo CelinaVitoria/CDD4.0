@@ -18,3 +18,10 @@ from classes import *
 t = Triangulo
 t.calculaArea()
 t.calculaPerimetro()
+
+from classes import *
+a1 = Atleta(70)
+a1.Aquecer()
+a1.PararDeAquecer()
+a1.Aposentar()
+a2 = Corredor()
