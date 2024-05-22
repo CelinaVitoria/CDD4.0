@@ -122,4 +122,111 @@ class Triangulo(Forma):
     def calculaPerimetro(l):
         self.perimetro = 3 * l
         print(f"A are do retangulo é {self.area} e o perimetro do retangulo é {self.perimetro}")
+class Atleta():
+    def __init__(self, peso):
+        self.aposentado = False
+        self.peso = peso
+        self.aquecendo = False
+        self.correndo = False
+        self.nadando = False
+        self.pedalando = False
+    def Aposentar(self):
+        if self.aposentado == False:
+            self.aposentado = True
+            print("O atleta está aposentado")
+    def Aquecer(self):
+        if self.aquecendo == False:
+            self.aquecendo = True
+            print("o atleta está aquecendo")
+    def PararDeAquecer(self):
+        if self.aquecendo == True:
+            self.aquecendo = False
+            print("o atleta parou de aquecer")
+class Corredor(Atleta):
+    def __init__(self):
+        super().__init__()
+    def Correr(self):
+        if self.pedalando  and self.aquecendo and self.nadando == False:
+            self.correndo = True
+            print("O atleta está correndo")
+        elif self.aquecendo == True:
+            print("o atleta está aquecendo")
+        elif self.pedalando == True:
+            print("o atleta está pedalando")
+        elif self.nadando == True:
+            print("o atleta está nadando")
+        elif self.aposentado == True:
+            print("o atleta está aposentado")
+    def Parardecorrer(self):
+        if self.correndo == True:
+            self.correndo = False
+            print("o atleta parou de correr")
+        elif self.correndo == False:
+            print("o atleta não está correndo")
+        elif self.aquecendo == True:
+            print("o atleta está aquecendo")
+        elif self.pedalando == True:
+            print("o atleta está pedalando")
+        elif self.nadando == True:
+            print("o atleta está nadando")
+        elif self.aposentado == True:
+            print("o atleta está aposentado")
+class Nadador(Atleta):
+    def __init__(self):
+        super().__init__()
+    def Nadar(self):
+        if self.pedalando  and self.aquecendo and self.correndo == False:
+            self.nandando = True
+            print("O atleta está nadando")
+        elif self.aquecendo == True:
+            print("o atleta está aquecendo")
+        elif self.pedalando == True:
+            print("o atleta está pedalando")
+        elif self.correndo == True:
+            print("o atleta está correndo")
+        elif self.aposentado == True:
+            print("o atleta está aposentado")
+    def Parardenadar(self):
+        if self.nadando == True:
+            self.nadando = False
+            print("o atleta parou de nadar")
+        elif self.nadando == False:
+            print("o atleta não está nadando")
+        elif self.aquecendo == True:
+            print("o atleta está aquecendo")
+        elif self.pedalando == True:
+            print("o atleta está pedalando")
+        elif self.correndo == True:
+            print("o atleta está correndo")
+        elif self.aposentado == True:
+            print("o atleta está aposentado")
+class Ciclista(Atleta):
+    def __init__(self):
+        super().__init__()
+    def Pedalar(self):
+        if self.nadando and self.aquecendo and self.correndo == False:
+            self.pedalando = True
+            print("O atleta está pedalando")
+        elif self.aquecendo == True:
+            print("o atleta está aquecendo")
+        elif self.correndo == True:
+            print("o atleta está correndo")
+        elif self.nadando == True:
+            print("o atleta está nadando")
+        elif self.aposentado == True:
+            print("o atleta está aposentado")
+    def Parardepedalar(self):
+        if self.pedalando == True:
+            self.pedalando = False
+            print("o atleta parou de pedalar")
+        elif self.pedalando == False:
+            print("o atleta não está pedalando")
+        elif self.aquecendo == True:
+            print("o atleta está aquecendo")
+        elif self.correndo == True:
+            print("o atleta está correndo")
+        elif self.nadando == True:
+            print("o atleta está nadando")
+        elif self.aposentado == True:
+            print("o atleta está aposentado")
 
