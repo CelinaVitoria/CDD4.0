@@ -1,0 +1,79 @@
+update funcionarios set telefone = '81828384329' where id_funcionario = '9';
+
+rua,n,cep,bairro,cidade
+
+insert table funcionarios add(
+logradouro varchar(30) not null,
+complemento varchar(30) not null,
+cep char(8) not null,
+bairro varchar(30) not null,
+cidade varchar(30) not null
+);
+
+insert into telefone(telefone, id_funcionario) values('12345678901', '9');
+
+
+ create table telefone(
+    id_telefone int not null auto_increment primary key,
+   telefone char(11) not null,
+   id_funcionario int not null,
+   foreign key(id_funcionario) references funcionarios(id_funcionario)
+   );
+
+alter table func2 modify id_funcionarios int not null auto_increment primary key;
+
+alter table email add(
+id_email int not null auto_increment primary key,
+id_funcionario int not null,
+foreign key(id_funcionario) references funcionarios(id_funcionario)
+);
+
+create table Alunos(
+matricula int not null auto_increment,
+nome varchar(50) not null,
+telefone char(11) not null,
+primary key (matricula)
+);
+
+create table disciplinas(
+id_disc int not null auto_increment,
+nome varchar(50) not null,
+primary key(id_disc)
+);
+
+create table matriculados(
+ id_mat int not null auto_increment,
+ matricula int not null,
+ id_disc int not null,
+ primary key(id_mat),
+ foreign key(matricula) references alunos(matricula),
+ foreign key(id_disc)references disciplinas(id_disc)
+);
+
+insert into endereco(id_end, logradouro, cep, bairro)
+values(1,'rua 1', '12345678', 'rosas'),
+(2,'rua 2','87654321', 'rosas'),
+(3,'rua 3', '21345678','rosas' ),
+(4,'rua 4', '87654312', 'rosas'),
+(5, 'rua 5', '78654321', 'rosas');
+
+create table endereco(
+id_end int not null auto_increment,
+primary key(id_end),
+logradouro varchar(50) not null,
+cep char(8) not null,
+bairro varchar(50) not null);sel
+
+select alunos.matricula, alunos.nome, endereco.logradouro,endereco.cep from alunos inner join endereco on alunos.matricula = endereco.id_disc;
+select alunos.matricula, alunos.nome, disciplinas.id_disc, disciplinas.nome from matriculados inner join alunos on matriculados.matricula = alunos.matricula inner join disciplinas on matriculados.id_disc = disciplinas.id_disc;
+
+create table alunos(
+matricula int not null auto_increment primary key,
+nome varchar(50) not null,
+telefone char(11) not null
+);
+
+insert into alunos(nome,telefone)
+values('vivi','81912345678'),
+('iza','81987654321'),
+('mari','81908765432');
